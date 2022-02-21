@@ -18,10 +18,6 @@ const io = socketIo(server, {
 
 const PORT = 2345;
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname) + '/index.html');
-});
-
 let interval;
 
 io.on('connection', (socket) => {
