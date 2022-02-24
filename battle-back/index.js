@@ -29,8 +29,6 @@ io.on('connection', (socket) => {
     socket.join(room);
   });
   socket.on('send', (message, room) => {
-    // console.log(message + 'in' + room);
-    // socket.to(room).emit('receive-message', message);
     console.log(message + ' has been send to' + room);
     socket.to(room).emit('receive-message', message);
   });
@@ -50,3 +48,5 @@ const getLobbyCount = (socket) => {
 server.listen(PORT, () => {
   console.log(`Server exists here ${PORT}`);
 });
+
+// сплит евентов
